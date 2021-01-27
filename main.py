@@ -1,5 +1,9 @@
 from classes.customer import Customer
 
+##
+## Created: 24.01.2021, Ali Babayev
+##
+
 def find(list_of_attend,list_of_sus):
     temp_map_of_sus_contacts = {}
     for username in list_of_sus:
@@ -10,7 +14,7 @@ def find(list_of_attend,list_of_sus):
             if(startDate <= int(cust.start_date) <= endDate) or (startDate <= int(cust.end_date)  <= endDate):
                 temp_map_of_sus_contacts[username].append(cust)
     return temp_map_of_sus_contacts
-
+ 
 def __output_txt(list_of_contacts):
     file1 = open('output.txt', 'w') 
     file1.writelines(list_of_contacts) 

@@ -1,3 +1,7 @@
+##
+## Created: 24.01.2021, Ali Babayev
+##
+
 class Customer:
     def __init__(self,name_surname,number,start_date,end_date):
         self._name_surname = name_surname
