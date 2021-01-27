@@ -1,35 +1,41 @@
-from os import name
-
 class Customer:
     def __init__(self,name_surname,number,start_date,end_date):
-        self.name_surname = name_surname
-        self.number = number
-        self.start_date = start_date
-        self.end_date = end_date
+        self._name_surname = name_surname
+        self._number = number
+        self._start_date = start_date
+        self._end_date = end_date
     
-    def setNameSurname(self,value):
-        self.name_surname = value
-    
-    def getNameSurname(self):
-        return self.name_surname
+    @property    
+    def name_surname(self):
+        return self._name_surname
 
-    def setNumber(self,value):
-        self.number = value
+    @name_surname.setter
+    def name_surname(self,value):
+        self._name_surname = value
     
-    def getNumber(self):
-        return self.number
-    
-    def setStartDate(self,value):
-        self.start_date = value
-    
-    def getStartDate(self):
-        return self.start_date
+    @property
+    def number(self):
+        return self._number
 
-    def setEndDate(self,value):
-        self.end_date = value
-        
-    def getEndDate(self):
-        return self.end_date
+    @number.setter
+    def number(self,value):
+        self._number = value
+  
+    @property
+    def start_date(self):
+        return self._start_date
 
-    def getStartEndDateStr(self):
-        return self.start_date + "," + self.end_date
+    @start_date.setter
+    def start_date(self,value):
+        self._start_date = value
+    
+    @property
+    def end_date(self):
+        return self._end_date
+    
+    @end_date.setter
+    def end_date(self,value):
+        self._end_date = value
+      
+    def get_start_end_date_list(self):
+        return [int(self._start_date), int(self._end_date)]
